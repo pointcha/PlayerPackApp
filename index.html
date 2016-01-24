@@ -7,15 +7,18 @@
 
 <nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
   <div class="container">
-    <div>
+    <div ng-show="!loggedIn">
     	<input type="text" ng-model="login.email">
     	<input type="password" ng-model="login.password">
     	<button ng-click="logUserIn()">Login</button> 
-    	<a ui-sref="signUp">Create An Account</a>
+    	<a ui-sref="signUp">Join the Pack</a>
+  </div>
+  <div ng-show="loggedIn">
+  	<a ui-sref="editProfile">Edit Profile</a>
   </div>
 </nav>
 
-  <div ui-view></div>
+  <div ui-view>test info here on load</div>
 
 </body>
 
@@ -25,4 +28,12 @@
 <script src="app/app.js"></script>
 <script src="app/signup/signup-controller.js"></script>
 <script src="app/navigation/navigation-controller.js"></script>
+<script src="app/profile/edit-profile-controller.js"></script>
+
+<!-- Libraries -->
+
+<script src="node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+<script src="node_modules/ng-file-upload/dist/ng-file-upload-all.js"></script>
+<script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+
 </html>
