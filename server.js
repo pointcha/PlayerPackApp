@@ -29,8 +29,7 @@ app.post('/api/user/login', authenticationController.login);
 
 //Profile
 app.post('/api/profile/editPhoto', multipartMiddleware, profileController.updatePhoto);
-app.post('/api/profile/updateUsername', profileController.updateUsername);
-app.post('/api/profile/updateBio', profileController.updateBio);
+app.post('/api/profile/updateUserProfile', profileController.updateProfile);
 
 
 app.listen('3000', function (){

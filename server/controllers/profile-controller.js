@@ -40,32 +40,25 @@ module.exports.updatePhoto = function (req, res){
 
 
 
-module.exports.updateUsername = function (req, res){
-	var username = req.body.username;
-	var userId = req.body.userId;
+module.exports.updateProfile = function (req, res){
+console.log(req.body.userId);
 
-	User.findById(userId, function(err, userData){
-		var user = userData;
-		user.username = username;
-
-		user.save(function(err){
-			if (err){
-				console.log("failed");
-				res.json({status: 500});
-			} else {
-				console.log("success");
-				res.json({status: 200});
-			}
-		})
-	});
-};
-
-module.exports.updateBio = function (req, res){
+	var userfirstname = req.body.userfirstname;
+	var userlastname = req.body.userlastname;
+	var usernumber = req.body.usernumber;
+	var userposition = req.body.userposition;
+	var userteam = req.body.userteam;
 	var bio = req.body.bio;
 	var userId = req.body.userId;
 
 	User.findById(userId, function(err, userData){
+
 		var user = userData;
+		user.userfirstname = userfirstname;
+		user.userlastname = userlastname;
+		user.usernumber = usernumber;
+		user.userposition = userposition;
+		user.userteam = userteam;
 		user.bio = bio;
 
 		user.save(function(err){

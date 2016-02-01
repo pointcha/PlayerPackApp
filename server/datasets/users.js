@@ -1,10 +1,16 @@
 var mongoose = require('mongoose');
 module.exports = mongoose.model('User', {
-	email: String,
-    username: String,
+	
+    userfirstname: String,
+    userlastname: String,
+    usernumber: String,
+    userposition: String,
+    userteam: String,
+    bio: String,
+    email: String,
 	password: String,
-    cardimage: String,
-    bio: String
+    cardimage: String
+
 });
 
 /* var bcrypt   = require('bcrypt-nodejs');

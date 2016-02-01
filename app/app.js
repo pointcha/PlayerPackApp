@@ -4,8 +4,7 @@
 
 					$stateProvider
 					.state('main', {
-						url:"/",
-						templateUrl: "app/static/main.html"
+						url:"/"
 					})
 					.state('signUp', {
 						url:"/signup",
